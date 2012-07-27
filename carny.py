@@ -22,7 +22,7 @@ time_patterns = {
                  
     }
 
-def main():
+def test():
     times =["2006-10-01T17:24:44",
             "9/16/2006 9:13:11 PM",
             "Sun Oct  1 22:38:22 2006",
@@ -46,7 +46,6 @@ def guess(date_time_str):
     for pat in time_patterns:
         m = re.compile(pat).match(date_time_str)
         if m is not None:
-            print(date_time_str)
             fmt = time_patterns[pat]
             epoch = get_epoch(date_time_str,fmt)
             return epoch
@@ -65,4 +64,4 @@ def get_all():
 
 
 if __name__=="__main__":
-    main()
+    test()
