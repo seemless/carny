@@ -9,7 +9,7 @@ time_patterns = {
                  r"\d{,2}\/\d{,2}\/\d{,4}\s+\d{,2}:\d{,2}:\d{,2}\s+[PM|AM]":"%m/%d/%Y %I:%M:%S %p",
                  #win_user.log, error_log, 
                  r"\w+\s+\w+\s+\d{,2}\s+\d{,2}:\d{,2}:\d{,2}\s+\d{,4}":"%a %b %d %H:%M:%S %Y",
-                 #_maillog, _messages, _secure, _last.log, 
+                 #_maillog, _messages, _secure,
                  #(NB: the preceding log types do not include a year by default, 
                  # it must be added in post-processing)
                  r"\w+\s+\d{,2}\s+\d{,2}:\d{,2}:\d{,2}":"%b %d %H:%M:%S %Y", 
@@ -18,9 +18,10 @@ time_patterns = {
                  #{01/Oct/2006:17:52:01 -0400} access
                  r"\d{,2}\/\w+\/\d{,4}:\d{,2}:\d{,2}:\d{,2}\s+\-\d{,4}":"%d/%b/%Y:%H:%M:%S -0400",
                  #{2006-10-1       21:14:31} .log, dragon.log,
-                 r"\d{,4}-\d{,2}-\d{,2}\s+\d{,2}:\d{,2}:\d{,2}":"%Y-%m-%d %H:%M:%S"
-                 
-    }
+                 r"\d{,4}-\d{,2}-\d{,2}\s+\d{,2}:\d{,2}:\d{,2}":"%Y-%m-%d %H:%M:%S",
+                 # _last.log, 
+                 r"\w+\s+\w+\s+\d{,2}\s+\d{,2}:\d{,2}\s+\d{,4}":"%a %b %d %H:%M %Y",
+}
 
 def test():
     times =["2006-10-01T17:24:44",
